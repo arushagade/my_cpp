@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+class Father 
+{
+    public: 
+    string prop_value= "One Millon";
+    public:
+    void get_property()
+     {
+        cout<<"\n Property of father is : "<<prop_value;
+        
+     }
+};
+
+class son: protected Father 
+{
+ public:
+    void get_property()
+     {
+        cout<<"\n Property of Son is : "<<prop_value;
+        
+     }   
+};
+
+class grandson: public son
+{
+ public:
+    void get_property()
+     {
+        cout<<"\n Property of grandson is : "<<prop_value;
+        
+     }   
+};
+
+int main()
+{
+    son s1;
+    s1.get_property();
+    grandson obj1;
+    obj1.get_property();
+  
+}

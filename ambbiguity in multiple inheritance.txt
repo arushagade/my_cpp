@@ -1,0 +1,77 @@
+#include<iostream>
+using namespace std;
+class Base1
+{
+    public:
+     void greet_B1()
+     {
+        cout<<"Hello!!";
+     }
+};
+
+class Base2
+{
+    public:
+     void greet_B2()
+     {
+        cout<<"\nAnnyeong!!";
+     }
+};
+
+class derived: public Base1, public Base2
+{
+    public :
+     void greet_d()
+     {
+        cout<<"\nMoshi moshi!!";
+     }
+};
+
+int main()
+{ Base1 b1;
+  b1.greet_B1();
+  Base2 b2;
+  b2.greet_B2();
+  derived obj;
+  obj.greet_d();
+  
+}
+
+//////
+
+#include<iostream>
+using namespace std;
+class Base1
+{
+    public:
+     void greet()
+     {
+        cout<<"Hello!!";
+     }
+};
+
+class Base2
+{
+    public:
+     void greet()
+     {
+        cout<<"\nAnnyeong!!";
+     }
+};
+
+class derived: public Base1, public Base2
+{
+    public :
+     void greet()
+     {
+        Base1::greet();
+        Base2::greet();
+     }
+};
+
+int main()
+{ 
+  derived obj;
+  obj.greet();
+  
+}
